@@ -10,7 +10,7 @@ Source0:	http://pypi.python.org/packages/source/s/sphinxcontrib-doxylink/sphinxc
 URL:		http://packages.python.org/sphinxcontrib-doxylink/
 BuildRequires:	python
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-Sphinx >= 0.6
 Requires:	python-pyparsing
 BuildArch:	noarch
