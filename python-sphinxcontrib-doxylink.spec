@@ -41,10 +41,10 @@ Requires:	python3-modules
 Requires:	python3-Sphinx >= 0.6
 Requires:	python3-pyparsing
 
-%description -n python3-%{module}
+%description -n python3-sphinxcontrib-doxylink
 Sphinx extension to link to external Doxygen API documentation.
 
-%description -n python3-%{module} -l pl.UTF-8
+%description -n python3-sphinxcontrib-doxylink -l pl.UTF-8
 Rozszerzenie Sphinksa do łączenia z zewnętrzną dokumentacją API z
 Doxygena.
 
