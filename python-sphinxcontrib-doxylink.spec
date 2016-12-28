@@ -7,7 +7,7 @@ Summary:	Sphinx extension to link to external Doxygen API documentation
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa do łączenia z zewnętrzną dokumentacją API z Doxygena
 Name:		python-sphinxcontrib-doxylink
 Version:	1.3
-Release:	4
+Release:	5
 License:	BSD
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/s/sphinxcontrib-doxylink/sphinxcontrib-doxylink-%{version}.tar.gz
