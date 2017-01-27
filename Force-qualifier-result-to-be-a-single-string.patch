@@ -1,0 +1,28 @@
+From: Paul McGuire <ptmcg@austin.rr.com>
+Date: Tue, 22 Nov 2016 19:00:59 +0000
+Subject: Force qualifier result to be a single string.
+
+---
+ sphinxcontrib/doxylink/parsing.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/sphinxcontrib/doxylink/parsing.py b/sphinxcontrib/doxylink/parsing.py
+index 4e42f44..54172f9 100644
+--- a/sphinxcontrib/doxylink/parsing.py
++++ b/sphinxcontrib/doxylink/parsing.py
+@@ -1,13 +1,14 @@
+ #import multiprocessing
+ import itertools
+ 
+-from pyparsing import Word, Literal, alphas, nums, alphanums, OneOrMore, Optional, SkipTo, ParseException, Group, ZeroOrMore, Suppress, Combine, delimitedList, quotedString, nestedExpr, ParseResults, oneOf
++from pyparsing import Word, Literal, alphas, nums, alphanums, OneOrMore, Optional, SkipTo, ParseException, Group, ZeroOrMore, Suppress, Combine, delimitedList, quotedString, nestedExpr, ParseResults, oneOf, ungroup
+ 
+ # define punctuation - reuse of expressions helps packratting work better
+ LPAR,RPAR,LBRACK,RBRACK,COMMA,EQ = map(Literal,"()[],=")
+ 
+ #Qualifier to go in front of type in the argument list (unsigned const int foo)
+ qualifier = OneOrMore(oneOf('const unsigned typename struct enum'))
++qualifier = ungroup(qualifier.addParseAction(' '.join))
+ 
+ def turn_parseresults_to_list(s, loc, toks):
+ 	return ParseResults(normalise_templates(toks[0].asList()))
