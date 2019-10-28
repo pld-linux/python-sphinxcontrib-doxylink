@@ -10,15 +10,18 @@ Version:	1.3
 Release:	8
 License:	BSD
 Group:		Development/Languages/Python
-Source0:	http://pypi.python.org/packages/source/s/sphinxcontrib-doxylink/sphinxcontrib-doxylink-%{version}.tar.gz
+#Source0Download: https://pypi.org/simple/sphinxcontrib-doxylink/
+Source0:	https://files.pythonhosted.org/packages/source/s/sphinxcontrib-doxylink/sphinxcontrib-doxylink-%{version}.tar.gz
 # Source0-md5:	f6800726c2d31bcd6b4a65d40852881f
 Patch0:		Force-qualifier-result-to-be-a-single-string.patch
-URL:		http://packages.python.org/sphinxcontrib-doxylink/
+URL:		https://pypi.org/project/sphinxcontrib-doxylink/
 %if %{with python2}
 BuildRequires:	python-modules
+BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
 BuildRequires:	python3-modules
+BuildRequires:	python3-setuptools
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
